@@ -1,10 +1,6 @@
 ---
 title: Jobs @ Eden
 description: Demo page for Eden Eleventy / Contentful build
-images:
-- one.jpg
-- two.jpg
-- three.jpg
 ---
 <!doctype html>
 <html lang="en">
@@ -21,26 +17,27 @@ images:
   <link rel="stylesheet" href="/style.css?v={% version %}" />
 </head>
 
-<body class="bg-gray-100 px-10 py-6">
-  <div class="relative p-20 bg-white shadow-lg rounded-xl ">
-  <h1 class="font-bold text-3xl">{{ title }}</h1>
+<body class="bg-gray-100 px-10 py-6 flex justify-center">
+  <div class="relative p-20 bg-white shadow-lg rounded-xl max-w-4xl">
+    <h1 class="font-bold text-3xl">{{ title }}</h1>
 
     {% for job in contentful.jobPostings %}
     <div>
 
-    <div class="border-b mt-8 mb-2">
-      <h2 class="text-lg font-bold inline">{{ job.jobTitle }}</h2>
-      <span class="float-right pr-5">{{ job.jobLocation }}</span>
+      <div class="border-b mt-8 mb-2">
+        <h2 class="text-lg font-bold inline">{{ job.jobTitle }}</h2>
+        <span class="float-right pr-5">{{ job.jobLocation }}</span>
+      </div>
+      <div>{{ job.jobDescription}}</div>
+      <div class="flex justify-center">
+        <button
+          class="bg-blue-500 hover:bg-blue-700 text-white text-xs font-bold mt-2 px-10 py-2 rounded-lg">Apply</button>
+      </div>
     </div>
-    <div>{{ job.jobDescription}}</div>
-    <div class="flex justify-center">
-      <button class="bg-blue-500 hover:bg-blue-700 text-white text-xs font-bold mt-2 px-10 py-2 rounded-lg">Apply</button>
-    </div>
-  </div>
 
     {% endfor %}
 
-</div>
+  </div>
   <!-- DEBUG: {{ contentful }} -->
 </body>
 
