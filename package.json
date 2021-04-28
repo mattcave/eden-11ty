@@ -5,6 +5,12 @@
   "devDependencies": {
     "@11ty/eleventy": "^0.12.1",
     "contentful": "^8.3.1",
-    "dotenv": "^8.2.0"
+    "dotenv": "^8.2.0",
+    "postcss-cli": "^8.3.1",
+    "tailwindcss": "^2.1.2"
+  },
+  "scripts": {
+    "start": "eleventy --serve & postcss styles/tailwind.css --o _tmp/style.css --watch",
+    "build": "ELEVENTY_PRODUCTION=true eleventy & NODE_ENV=production postcss styles/tailwind.css --o _site/style.css"
   }
 }
