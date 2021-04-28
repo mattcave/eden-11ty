@@ -1,0 +1,32 @@
+---
+title: Jobs 
+images:
+  - one.jpg
+  - two.jpg
+  - three.jpg
+---
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8">
+  <title>{{ title }}</title>
+ </head>
+ <body>
+  <h1>{{ title }}</h1>
+  <table>
+    {% for job in contentful.jobPostings %}
+    <tr>
+      <td><a href="#">{{ job.jobTitle }}</td><td>{{ job.jobLocation }}</td>
+    </tr>
+    <tr>
+      <td colspan="2">
+        {{ job.jobDescription}}
+      </td>
+    </tr>
+    {% endfor %}
+
+  </table>
+
+ <!-- DEBUG: {{ contentful }} -->
+</body>
+</html>
