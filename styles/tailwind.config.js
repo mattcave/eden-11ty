@@ -10,6 +10,9 @@ module.exports = {
         colors: {
           change: 'transparent',
         },
+        backgroundImage: theme => ({
+          'noise': "url('/img/bgnoise_lg.png')"
+        }),
       },
     },
     variants: {},
