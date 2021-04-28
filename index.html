@@ -17,8 +17,8 @@ description: Demo page for Eden Eleventy / Contentful build
   <link rel="stylesheet" href="/style.css?v={% version %}" />
 </head>
 
-<body class="bg-noise px-10 py-6 flex justify-center">
-  <div class="relative p-20 bg-white shadow-lg rounded-xl max-w-4xl transform lg:rotate-6">
+<body class="bg-noise p-3 lg:px-10 lg:py-6 flex justify-center">
+  <div class="relative p-8 lg:p-20 bg-white shadow-lg rounded-xl max-w-4xl transform lg:rotate-6">
     <h1 class="font-bold text-3xl">{{ title }}</h1>
 
     {% for job in contentful.jobPostings %}
@@ -26,7 +26,7 @@ description: Demo page for Eden Eleventy / Contentful build
 
       <div class="border-b mt-8 mb-2">
         <h2 class="text-lg font-bold inline">{{ job.jobTitle }}</h2>
-        <span class="float-right pr-5">{{ job.jobLocation }}</span>
+        <span class="float-right pr-2 lg:pr-5">{{ job.jobLocation }}</span>
       </div>
       <div>{{ job.jobDescription}}</div>
       <div class="flex justify-center">
