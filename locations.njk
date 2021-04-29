@@ -1,0 +1,9 @@
+---
+pagination:
+  data: contentful.locations
+  size: 1
+  alias: location
+permalink: "{{ location.name | slug }}.html"
+---
+
+{{ location.name }} is {{ location.status }}
